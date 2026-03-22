@@ -11,7 +11,7 @@ const codeData = [
   { label: 'BACK', value: 'Node.js · Express' },
   { label: 'DATA', value: 'MongoDB · PostgreSQL · Redis' },
   { label: 'TOOLS', value: 'Figma · Postman · Git-Github' },
-  { label: 'DEPLOY', value: 'Vercel · AWS · Docker' },
+  { label: 'DEPLOY', value: 'Vercel · GCP · Docker' },
 ];
 
 const cultureData = [

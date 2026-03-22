@@ -138,8 +138,8 @@ export default function Hero() {
 
           <div className="hero-btn mt-8 md:mt-16">
             <a
-              href="/Sanidhya_Pant_CV.pdf"
-              download
+              href="/updatedGCV.pdf"
+              download="Sanidhya_Pant_CV.pdf"
               className="btn-water-fill px-8 py-4 rounded-full text-white font-medium tracking-widest text-[10px] sm:text-xs"
             >
               <span>Get CV</span>
