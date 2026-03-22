@@ -1,0 +1,171 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Inter', system-ui, sans-serif;
+  --font-heading: 'Anton', sans-serif;
+  --color-primary: #000000;
+  --color-secondary: #ffffff;
+  --color-accent-red: #ff4d00;
+  --color-offwhite: #f5f5f5;
+  --z-1000: 1000;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    background-color: #000000;
+    color: #ffffff;
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+@layer utilities {
+  .section-pad {
+    @apply px-6 md:px-10 py-16 md:py-24;
+  }
+  
+  .container-base {
+    @apply max-w-7xl mx-auto w-full;
+  }
+
+  .heading-lg {
+    @apply text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white;
+  }
+
+  .text-muted {
+    @apply text-gray-400 text-base md:text-lg leading-relaxed;
+  }
+
+  .z-100 {
+    z-index: 100;
+  }
+
+  .aspect-16\/10 {
+    aspect-ratio: 16 / 10;
+  }
+
+  .btn-water-fill {
+    @apply relative overflow-hidden transition-all duration-500 bg-transparent border border-white/20;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 0;
+    border-radius: 9999px;
+  }
+
+  .btn-water-fill span {
+    @apply relative transition-colors duration-500;
+    position: relative;
+    z-index: 2;
+  }
+
+  /* Water fill blobs (reworked for consistent behavior across browsers) */
+  .btn-water-fill::after,
+  .btn-water-fill::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -120%;
+    width: 200%;
+    height: 200%;
+    background: var(--color-accent-red);
+    border-radius: 50%;
+    transform: translateX(-50%) rotate(0deg);
+    z-index: 1;
+    transition: bottom 700ms cubic-bezier(0.4, 0, 0.2, 1), transform 8s linear;
+    pointer-events: none;
+  }
+
+  .btn-water-fill::before {
+    opacity: 0.6;
+    left: 60%;
+    bottom: -130%;
+    transform: translateX(-50%) rotate(25deg);
+    transition-duration: 900ms, 10s;
+  }
+
+  .btn-water-fill:hover::after {
+    bottom: 0%;
+    transform: translateX(-50%) rotate(360deg);
+  }
+
+  .btn-water-fill:hover::before {
+    bottom: 0%;
+    transform: translateX(-50%) rotate(405deg);
+  }
+
+  .btn-water-fill:hover span {
+    @apply text-white;
+  }
+
+  /* Text Water Fill */
+  .text-water-fill {
+    @apply relative inline-block cursor-default;
+    color: rgba(255, 255, 255, 0.1);
+  }
+
+  .text-water-fill::after {
+    content: attr(data-text);
+    @apply absolute top-0 left-0 w-full h-full text-accent-red overflow-hidden transition-all duration-700;
+    clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
+    display: block;
+    pointer-events: none;
+  }
+
+  .text-water-fill:hover::after,
+  .text-water-fill.is-active::after {
+    animation: text-water-flow 2s forwards cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* Scroll Progress Bar */
+  .scroll-progress-bar {
+    @apply fixed top-0 left-0 w-full h-1.5 bg-accent-red origin-left scale-x-0 z-1000;
+  }
+}
+
+@keyframes text-water-flow {
+  0% {
+    clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
+  }
+  20% {
+    clip-path: polygon(0 80%, 25% 75%, 50% 85%, 75% 75%, 100% 80%, 100% 100%, 0 100%);
+  }
+  40% {
+    clip-path: polygon(0 60%, 25% 65%, 50% 55%, 75% 65%, 100% 60%, 100% 100%, 0 100%);
+  }
+  60% {
+    clip-path: polygon(0 40%, 25% 35%, 50% 45%, 75% 35%, 100% 40%, 100% 100%, 0 100%);
+  }
+  80% {
+    clip-path: polygon(0 20%, 25% 25%, 50% 15%, 75% 25%, 100% 20%, 100% 100%, 0 100%);
+  }
+  100% {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+}
+
+@keyframes text-water-flow-light {
+  0% {
+    clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
+  }
+  20% {
+    clip-path: polygon(0 85%, 25% 90%, 50% 80%, 75% 90%, 100% 85%, 100% 100%, 0 100%);
+  }
+  40% {
+    clip-path: polygon(0 65%, 25% 55%, 50% 65%, 75% 55%, 100% 65%, 100% 100%, 0 100%);
+  }
+  60% {
+    clip-path: polygon(0 45%, 25% 35%, 50% 45%, 75% 35%, 100% 45%, 100% 100%, 0 100%);
+  }
+  80% {
+    clip-path: polygon(0 25%, 25% 15%, 50% 25%, 75% 15%, 100% 25%, 100% 100%, 0 100%);
+  }
+  100% {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+}
