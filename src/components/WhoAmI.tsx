@@ -101,7 +101,7 @@ export default function WhoAmI() {
     <section 
       id="who-am-i" 
       ref={containerRef} 
-      className="relative bg-black min-h-screen flex flex-col border-t border-white/5 overflow-hidden"
+      className="relative bg-black min-h-screen flex flex-col overflow-hidden"
     >
       {/* Top Tag */}
       <div className=" top-8 left-8 md:top-12 md:left-12 z-20">

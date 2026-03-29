@@ -2,7 +2,7 @@ import PageFooter from './PageFooter';
 
 export default function Contact() {
   return (
-    <section id="contact" className="section-pad bg-black border-t border-white/5 py-32 md:py-48 relative overflow-hidden flex flex-col min-h-screen">
+    <section id="contact" className="section-pad bg-black  py-32 md:py-48 relative overflow-hidden flex flex-col min-h-screen">
       <div
         className="container-base flex flex-col items-center justify-center text-center reveal-on-scroll flex-1"
       >

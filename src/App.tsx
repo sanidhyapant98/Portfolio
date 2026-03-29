@@ -2,6 +2,7 @@ import Hero from './components/Hero';
 import About from './components/About';
 import WhoAmI from './components/WhoAmI';
 import Projects from './components/Projects';
+import Certifications from './components/Certifications';
 import Contact from './components/Contact';
 import CustomCursor from './components/CustomCursor';
 import ScrollProgressBar from './components/ScrollProgressBar';
@@ -48,12 +49,13 @@ export default function App() {
         <About />
         <WhoAmI />
         <Projects />
+        <Certifications />
         <Contact />
+        <footer className="py-16 text-center text-gray-600 text-sm reveal-on-scroll">
+        <p className="tracking-widest uppercase font-mono">© {new Date().getFullYear()} SANIDHYA PANT. All rights reserved.</p>
+        </footer>
       </main>
       
-      <footer className="py-16 text-center text-gray-600 text-sm border-t border-white/5 reveal-on-scroll">
-        <p className="tracking-widest uppercase font-mono">© {new Date().getFullYear()} SANIDHYA PANT. All rights reserved.</p>
-      </footer>
     </div>
   );
 }
