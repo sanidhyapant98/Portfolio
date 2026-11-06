@@ -8,11 +8,11 @@ gsap.registerPlugin(ScrollTrigger);
 const projects = [
   {
     id: 1,
-    title: 'MyRes - RMS',
-    description: 'A Restaurant Management System Backend built for CRUD operations with RBAC and Rate Limiting',
-    tech: ['ExpressJS', 'NodeJS', 'MongoDB', 'Redis'],
-    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=2426',
-    link: 'https://github.com/sanidhyapant98/MyRes'
+    title: 'Distributed Order Processing System',
+    description: 'Designed and developed a distributed order processing system using Express.js, TypeScript, KafkaJS, and Prisma ORM, comprising independent Order, Payment, and Inventory microservices communicating through event-driven architecture. Implemented the Transactional Outbox Pattern and Idempotent Consumers for reliable event delivery and data consistency. Enhanced resilience with bounded retry mechanisms and Kafka-based Dead Letter Queues (DLQ). Achieved 99.9% message delivery reliability while handling 200+ concurrent orders.',
+    tech: ['NodeJS', 'ExpressJS', 'TypeScript', 'Prisma', 'KafkaJS', 'Docker'],
+    image: 'https://images.unsplash.com/photo-1556740734-67ba9b73550c?auto=format&fit=crop&q=80&w=2426',
+    link: 'https://github.com/sanidhyapant98/DistributedOrderProcessingSystem'
   },
   {
     id: 2,
